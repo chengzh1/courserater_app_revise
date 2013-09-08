@@ -1,4 +1,10 @@
 CourseraterApp::Application.routes.draw do
+  get "staticpages/home"
+
+  get "staticpages/about"
+
+  get "staticpages/contact"
+
   resources :raters
 
 
