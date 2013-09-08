@@ -6,8 +6,10 @@ class CreateRaters < ActiveRecord::Migration
       t.integer :questiong3
       t.string :question4
       t.integer :course_id
-
       t.timestamps
+      
     end
+    add_index :raters, [:course_id, :created_at]
+
   end
 end

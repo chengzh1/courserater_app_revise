@@ -14,7 +14,8 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @course = Course.find(params[:id])
-
+    @raters = @course.raters.paginate(page: params[:page])
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @course }

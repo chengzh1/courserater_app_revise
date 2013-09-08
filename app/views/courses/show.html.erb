@@ -1,3 +1,21 @@
+<% provide(:title, @course.name) %>
+<div class="row">
+
+  <aside>
+   
+  </aside>
+  <div class="span8">
+    <% if @course.raters.any? %>
+      <h3>Raters (<%= @course.raters.count %>)</h3>
+      <ol class="raters">
+      <%= render @raters %>
+      </ol>
+      <%= will_paginate @raters %>
+    <% end %>
+  </div>
+</div>
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
