@@ -1,19 +1,16 @@
 # == Schema Information
 #
-# Table name: raters
+# Table name: users
 #
 #  id         :integer          not null, primary key
-#  question1  :integer
-#  question2  :integer
-#  questiong3 :integer
-#  question4  :string(255)
-#  course_id  :integer
+#  name       :string(255)
+#  email      :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 require 'spec_helper'
 
-describe Rater do
+describe User do
   pending "add some examples to (or delete) #{__FILE__}"
 end
