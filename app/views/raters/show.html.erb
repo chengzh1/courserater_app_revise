@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Question1:</b>
+  <%= @rater.question1 %>
+</p>
+
+<p>
+  <b>Question2:</b>
+  <%= @rater.question2 %>
+</p>
+
+<p>
+  <b>Questiong3:</b>
+  <%= @rater.questiong3 %>
+</p>
+
+<p>
+  <b>Question4:</b>
+  <%= @rater.question4 %>
+</p>
+
+<p>
+  <b>Course:</b>
+  <%= @rater.course_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_rater_path(@rater) %> |
+<%= link_to 'Back', raters_path %>
