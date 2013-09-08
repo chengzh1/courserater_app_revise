@@ -1,15 +1,9 @@
 CourseraterApp::Application.routes.draw do
-  get "static_pages/home"
+  get "users/new"
 
-  get "static_pages/about"
-
-  get "static_pages/contact"
-
-  get "staticpages/home"
-
-  get "staticpages/about"
-
-  get "staticpages/contact"
+    root to: 'static_pages#home'
+    match '/about',   to: 'static_pages#about'
+    match '/contact', to: 'static_pages#contact'
 
   resources :raters
 
