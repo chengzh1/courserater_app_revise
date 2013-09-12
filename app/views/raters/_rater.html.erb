@@ -1,15 +1,40 @@
-<li>
-  <span class="question1"> Question1:<%= rater.question1 %></span>
-</li>
-<li>
-  <span class="question2">Question2:<%= rater.question2 %></span>
-</li>
-<li>
-  <span class="question3">"Question3:"<%= rater.questiong3 %></span>
-  <span class="question4">"Question4"<%= rater.question4 %></span>>
-</li>
-<br>
-</br>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(rater.created_at) %> ago.
+<ul>
+  <span class="name"> 
+   <p style="font-family:arial;font-size:18px;">
+   Students's name:
+   <%= rater.question4 %>
+   </p>
+   </span>
+</ul>
+<ul>
+  <span class="question1">
+  <p style="font-family:arial;font-size:18px;">
+  Bas the ed on quality of the course, <%= rater.question4 %> rates 
+  <%= rater.question1 %>
+  </p>
   </span>
+</ul>
+<ul>
+  <span class="question2">
+  <p style="font-family:arial;font-size:18px;">
+  Based on how much <%= rater.question4 %> like the course's teacher, <%= rater.question4 %> rates
+  <%= rater.question2 %>
+  </span> 
+  </p>
+</ul>
+<ul>
+  <span class="question3">
+  <p style="font-family:arial;font-size:18px;">
+  Based on how difficult the course is, <%= rater.question4 %> rates
+  <%= rater.questiong3 %>
+  </span>
+  </p>
+</ul>
+
+<ul>
+  <span class="timestamp">
+ <p style="font-family:arial;font-size:14px;">    
+ --Posted <%= time_ago_in_words(rater.created_at) %> ago.
+ </p>
+  </span>
+</ul>

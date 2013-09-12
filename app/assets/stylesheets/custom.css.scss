@@ -7,6 +7,7 @@ html {
 }
 
 body {
+  background-image:url('course_background.jpg');
   padding-top: 60px;
 }
 
@@ -59,7 +60,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #FF4000;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -68,8 +69,9 @@ p {
 }
 
 #logo:hover {
-  color: #fff;
+  color: #B40404;
   text-decoration: none;
+
 }
 
 /* footer */
@@ -101,4 +103,24 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 10px;
+}
+
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
 }

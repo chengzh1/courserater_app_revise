@@ -4,11 +4,14 @@ CourseraterApp::Application.routes.draw do
     root to: 'static_pages#home'
     match '/about',   to: 'static_pages#about'
     match '/contact', to: 'static_pages#contact'
+    
+    match '/signup', to: 'users#new'
+    resources :raters
 
-  resources :raters
 
-
-  resources :courses
+    resources :courses
+    
+    resources:users
 
 
   # The priority is based upon order of creation:

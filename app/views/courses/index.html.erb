@@ -1,24 +1,31 @@
-<h1>Listing courses</h1>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
+<h1 style= "color:red">Course List</h1>
+<% i = 1%>
 <% @courses.each do |course| %>
-  <tr>
-    <td><%= course.name %></td>
-    <td><%= course.description %></td>
-    <td><%= link_to 'Show', course %></td>
-    <td><%= link_to 'Edit', edit_course_path(course) %></td>
-    <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <b style="font-size:20px; color:orange"> 
+   Course<%= i%>:
+  </b>
+  <p style="font-size:16px;">
+  <%= course.name %>
+  </p>
+  <b style="font-size:18px; color:blue"> 
+  Description: 
+  </b>
+  <p style="font-size:16px;">
+  <%= course.description %>
+  </p>
+  <p style="text-align:right;">
+  <%= link_to 'Show Students\' Evaluation', course %>|
+  <%= link_to 'Edit this course', edit_course_path(course) %>|
+  <%= link_to 'Delete this course', course, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
+  <% i = i + 1 %>
 <% end %>
-</table>
 
 <br />
 
-<%= link_to 'It\'s your free to add new courses and its description',  new_course_path %>
+<p>
+You can add a new course's description
+<%= link_to '(click here)',  new_course_path %>
+</p>
+

@@ -4,6 +4,6 @@
     <p>
         As you know, there a lot of courses we could select in CMU while the number of courses we could choose is limited. Therefore, it's hard for students to choose a. My website is created in order to let students give evaluation of courses they have selected. It will not only give a reference of the course to others but also let students to communicate about the course with each other.
       </p>
-  <%= link_to "See course's description", 'http://localhost:3000/courses', class: "btn btn-large btn-black" %>   
-  <%= link_to "See course's evaluation", 'http://localhost:3000/raters', class: "btn btn-large btn-primary" %>
+  <%= link_to "See course's description", courses_path, class: "btn btn-large btn-black" %>   
+  <%= link_to "Give your evaluation", new_rater_path, class: "btn btn-large btn" %>
 </div>

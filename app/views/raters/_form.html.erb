@@ -12,25 +12,29 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :question1 %><br />
+    What's your name ?<br />
+    <%= f.text_field :question4 %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :course_id %>Course's id(<a href="http://localhost:3000/courses"> See here </a>)<br />
+    <%= f.number_field :course_id %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :question1 %>Rate the quality of the course(points 1-10)<br />
     <%= f.number_field :question1 %>
   </div>
   <div class="field">
-    <%= f.label :question2 %><br />
+    <%= f.label :question2 %>Give a point to the course's teacher based on how much you like him/her(points 1-10)<br />
     <%= f.number_field :question2 %>
   </div>
   <div class="field">
-    <%= f.label :questiong3 %><br />
+    <%= f.label :questiong3 %>Based on how difficult the course is, give your point(1 means too easy while 10 means too difficult)<br />
     <%= f.number_field :questiong3 %>
   </div>
-  <div class="field">
-    <%= f.label :question4 %><br />
-    <%= f.text_field :question4 %>
-  </div>
-  <div class="field">
-    <%= f.label :course_id %><br />
-    <%= f.number_field :course_id %>
-  </div>
+
+  
   <div class="actions">
     <%= f.submit %>
   </div>
