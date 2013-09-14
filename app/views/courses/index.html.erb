@@ -1,19 +1,39 @@
+<head>
 
-<h1 style= "color:red">Course List</h1>
+<style type="text/css">
+
+body {background-color: yellow}
+p {background-color: transparent}
+
+</style>
+</head>
+
+<h1 style= "color:red">
+    Course List
+</h1>
 <% i = 1%>
 <% @courses.each do |course| %>
   <b style="font-size:20px; color:orange"> 
-   Course<%= i%>:
+    Course<%= i%>:
   </b>
-  <p style="font-size:16px;">
-  <%= course.name %>
-  </p>
-  <b style="font-size:18px; color:blue"> 
+  
+  <br></br>
+    <p style="font-size:16px; color:red">
+        <%= course.name %>
+    </p>
+<br></br>
+ 
+ <b style="font-size:18px; color:blue"> 
   Description: 
   </b>
-  <p style="font-size:16px;">
-  <%= course.description %>
-  </p>
+
+  <br></br>
+  
+  <div class = "left hero-unit">
+    <p style="font-size:16px; color:red">
+    <%= course.description %> 
+    </p>
+  </div>
   <p style="text-align:right;">
   <%= link_to 'Show Students\' Evaluation', course %>|
   <%= link_to 'Edit this course', edit_course_path(course) %>|
