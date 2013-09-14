@@ -16,7 +16,7 @@ class Rater < ActiveRecord::Base
   attr_accessible :course_id, :question1, :question2, :question4, :questiong3
     #c:course_id被注解
   validates :course_id, presence: true
-  validates :question1,  presence: true
+    validates :question1,  presence: true, numericality:{:greater_than=>0, :less_than=>11}
   validates :question2,  presence: true
   validates :questiong3,  presence: true, length: { maximum: 150 }
   validates :question4,  presence: true, length: { maximum: 150 }
