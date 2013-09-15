@@ -1,5 +1,6 @@
 class RatersController < ApplicationController
-  before_filter :signed_in_user
+    before_filter :signed_in_user, only: [:create, :destroy]
+    before_filter :correct_user,   only: :destroy
   # GET /raters
   # GET /raters.json
   def index
@@ -48,7 +49,7 @@ class RatersController < ApplicationController
           redirect_to root_url
       else
         @feed_items = []
-        render 'static_pages/home'
+          render  action: "new"#'static_pages/home'
       end
   end
 
@@ -71,12 +72,14 @@ class RatersController < ApplicationController
   # DELETE /raters/1
   # DELETE /raters/1.json
   def destroy
-    @rater = Rater.find(params[:id])
     @rater.destroy
-
-    respond_to do |format|
-      format.html { redirect_to raters_url }
-      format.json { head :no_content }
-    end
+    redirect_to root_url
   end
+    
+    private
+    
+    def correct_user
+        @rater = current_user.raters.find_by_id(params[:id])
+        redirect_to root_url if @rater.nil?
+    end
 end

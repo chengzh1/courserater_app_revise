@@ -38,3 +38,8 @@
  </p>
   </span>
 </ul>
+
+<% if current_user?(rater.user) %>
+    <%= link_to "delete", rater, method: :delete,
+                                     data: { confirm: "You sure?" }%>
+  <% end %>

@@ -1,21 +1,32 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="span4">
+
+  <div class="row">
+    <aside class="span4">
+    
     <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
+        <div class="span8">
+            <%= render 'follow_form' if signed_in? %>
+        </div>
+  
+        <section>
+            <%= render 'shared/user_info' %>
+        </section>
+        <section>
+            <%= render 'shared/stats' %>
+        </section>
+        <section>
+       <%= link_to "See course's description", courses_path, class: "btn btn-primary btn"%>
+       </section>
+      
+        <section>
+        <%= link_to "Give your evaluation", new_rater_path, class: "btn btn-primary btn" %>
+        </section>
     </section>
-  </aside>
-  <div class="span8">
-  <%= render 'follow_form' if signed_in? %>
-    <% if @user.raters.any? %>
-      <h3>Raters (<%= @user.raters.count %>)</h3>
-      <ol class="raters">
-        <%= render @raters %>
-      </ol>
-      <%= will_paginate @raters %>
-    <% end %>
-  </div>
-</div>
+    
+    </aside>
+    
+    <div class="span8">
+      <h3>Rater Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>  

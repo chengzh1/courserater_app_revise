@@ -19,8 +19,8 @@ class Rater < ActiveRecord::Base
     validates :course_id, presence: true
     #validates :user_id, presence: true
     validates :question1,  presence: true, numericality:{:greater_than=>0, :less_than=>11}
-    validates :question2,  presence: true
-    validates :questiong3,  presence: true, length: { maximum: 150 }
+    validates :question2,  presence: true,numericality:{:greater_than=>0, :less_than=>11}
+    validates :questiong3,  presence: true, numericality:{:greater_than=>0, :less_than=>11}
     validates :question4,  presence: true, length: { maximum: 150 }
     
     belongs_to :course

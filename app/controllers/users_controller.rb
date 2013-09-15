@@ -13,8 +13,11 @@ class UsersController < ApplicationController
     end
     
     def show
+        if signed_in?
+            @rater = current_user.raters.build
+            @feed_items = current_user.feed.paginate(page: params[:page])
+        end
         @user = User.find(params[:id])
-        @raters = @user.raters.paginate(page: params[:page])
     end
     
     def edit
@@ -22,12 +25,12 @@ class UsersController < ApplicationController
     end
     
     def create
-        user = User.find_by_email(params[:session][:email].downcase)
-        if user && user.authenticate(params[:session][:password])
-            sign_in user
-            redirect_back_or user
+        @user = User.new(params[:user])
+        if @user.save
+            sign_in @user  #定义在helper/sessions_helper
+            flash[:success] = "Welcome to CMU Course Rater!"
+            redirect_to @user
             else
-            flash.now[:error] = 'Invalid email/password combination'
             render 'new'
         end
     end

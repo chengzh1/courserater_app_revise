@@ -224,7 +224,9 @@ input {
 }
 
 .timestamp {
-  color: $orange;
+  margin-left: 50px;
+  padding: 10px 0;
+  color: $red;
 }
 .gravatar {
   float: left;
