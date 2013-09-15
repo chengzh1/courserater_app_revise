@@ -1,4 +1,5 @@
 class RatersController < ApplicationController
+  before_filter :signed_in_user
   # GET /raters
   # GET /raters.json
   def index
@@ -40,17 +41,15 @@ class RatersController < ApplicationController
   # POST /raters
   # POST /raters.json
   def create
-    @rater = Rater.new(params[:rater])
+      @rater = current_user.raters.build(params[:rater])
 
-    respond_to do |format|
       if @rater.save
-        format.html { redirect_to @rater, notice: 'Rater was successfully created.' }
-        format.json { render json: @rater, status: :created, location: @rater }
+          flash[:success] = "New Rater created!"
+          redirect_to root_url
       else
-        format.html { render action: "new" }
-        format.json { render json: @rater.errors, status: :unprocessable_entity }
+        @feed_items = []
+        render 'static_pages/home'
       end
-    end
   end
 
   # PUT /raters/1

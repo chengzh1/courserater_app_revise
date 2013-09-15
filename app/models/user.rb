@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
     attr_accessible :name, :email, :password, :password_confirmation
     has_secure_password
     has_many :microposts, dependent: :destroy
+    has_many :raters, dependent: :destroy
+    
     has_many :relationships, foreign_key: "follower_id", dependent: :destroy
     has_many :followed_users, through: :relationships, source: :followed
     
@@ -34,7 +36,7 @@ class User < ActiveRecord::Base
     
     def feed
         # This is preliminary. See "Following users" for the full implementation.
-        Micropost.where("user_id = ?", id)
+        Rater.where("user_id = ?", id)
     end
     
     def following?(other_user)

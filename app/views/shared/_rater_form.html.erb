@@ -1,0 +1,11 @@
+<%= form_for(@rater) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+   <%= f.text_field :question4, placeholder: "What's your name?" %>
+   <%= f.number_field :course_id, placeholder: "Course's id" %>
+    <%= f.number_field :question1, placeholder: "Rate the quality of the course(points 1-10)" %>
+     <%= f.number_field :question2, placeholder: "Give a point to the course's teacher based on how much you like him/her(points 1-10)" %>
+      <%= f.number_field :questiong3, placeholder: "Based on how difficult the course is, give your point(1 means too easy while 10 means too difficult)" %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>

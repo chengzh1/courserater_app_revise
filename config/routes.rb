@@ -7,7 +7,7 @@ CourseraterApp::Application.routes.draw do
     match '/signup', to: 'users#new'
 
 
-    resources :raters
+    resources :raters, only: [:new, :create, :destroy]
     resources :courses
     resources :users do
         member do

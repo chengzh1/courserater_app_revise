@@ -211,9 +211,9 @@ input {
   @extend .error;
 }
 
-/* microposts */
+/* raters */
 
-.microposts {
+.raters {
   list-style: none;
   margin: 10px 0 0 0;
 
@@ -222,11 +222,9 @@ input {
     border-top: 1px solid #e8e8e8;
   }
 }
-.content {
-  display: block;
-}
+
 .timestamp {
-  color: $grayLight;
+  color: $orange;
 }
 .gravatar {
   float: left;

@@ -10,6 +10,6 @@ class CreateRaters < ActiveRecord::Migration
       
     end
     add_index :raters, [:course_id, :created_at]
-
+    add_index :raters, [:user_id, :created_at]
   end
 end
