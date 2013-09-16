@@ -1,5 +1,5 @@
 CourseraterApp::Application.routes.draw do
-  get "users/new"
+    get "users/new"
 
     root to: 'static_pages#home'
     match '/about',   to: 'static_pages#about'
@@ -20,7 +20,10 @@ CourseraterApp::Application.routes.draw do
     
     match '/signin', to: 'sessions#new'
     match '/signout', to: 'sessions#destroy', via: :delete
-
+    
+    namespace :api do
+        resources :users, :defaults => { :format => 'xml' }
+    end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
