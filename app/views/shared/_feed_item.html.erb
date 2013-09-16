@@ -1,32 +1,48 @@
+<%if !Course.where(id: (feed_item.course_id)).empty? %>
 <li id="<%= feed_item.id %>">
   <%= link_to gravatar_for(feed_item.user), feed_item.user %>
   <ul>
+    <span class="Course">
+    <p style="font-family:arial;font-size:18px; color:red">
+    Course's name:
+    <%= link_to Course.find(feed_item.course_id).name,  feed_item.course%>
+    </p>
+    </span>
+ </ul>
+ <ul>
+    <span class="Course id">
+    <p style="font-family:arial;font-size:18px; color:red">
+    Course's ID:<%= feed_item.course_id%>
+    </p>
+    </span>
+ </ul>
+  <ul>
     <span class="user">
     <p style="font-family:arial;font-size:18px; color:red">
-    Student's name:
+    Rater:
     <%= link_to feed_item.user.name, feed_item.user %>
     </p>
     </span>
 </ul>
 <ul>
-    <span class="question1">
-    <p style="font-family:arial;font-size:18px; color:red">
+    <span class="question">
+    <p style="font-family:arial; font-size:18px; color:brwon">
     Based on quality of the course, <%=feed_item.user.name%> rates
     <%= feed_item.question1 %>
     </p>
     </span>
 </ul>
 <ul>
-    <span class="question2">
-    <p style="font-family:arial;font-size:18px; color:red">
+    <span class="question">
+    <p style="font-family:arial;font-size:18px; color:brown">
     Based on how much, <%=feed_item.user.name%> like the course's teacher,<%=feed_item.user.name%> rates
     <%= feed_item.question2 %>
     </p>
     </span>
 </ul>
 <ul>
-    <span class="question3">
-     <p style="font-family:arial;font-size:18px; color:red">
+    <span class="question">
+     <p style="font-family:arial;font-size:18px; color:brown">
     Based on how difficult the course is, <%=feed_item.user.name%> rates
     <%= feed_item.questiong3 %>
     </p>
@@ -34,9 +50,9 @@
 </ul>
 
 <ul>
-    <span class="questio4">
-     <p style="font-family:arial;font-size:18px; color:red">
-     <%=feed_item.user.name%> comment: 
+    <span class="question">
+     <p style="font-family:arial;font-size:18px; color:brown">
+     <%=feed_item.user.name%> comments: 
     <%= feed_item.question4 %>
     </p>
     </span>
@@ -53,3 +69,4 @@
                             
   <% end %>
 </li>
+<%end%>
